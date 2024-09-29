@@ -1,0 +1,19 @@
+{
+  "name": "conf_own",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "compile": "peggy --format es -o src/grammar.js grammar/grammar.pegjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "peggy": "^4.0.3",
+    "typescript": "^5.6.2"
+  }
+}
