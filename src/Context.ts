@@ -4,6 +4,9 @@ type TableEntry = {
 };
 
 export default class SymbolTable {
+    /**
+     * Represents the current context
+     */
     private depth: number;
     private table: TableEntry[];
 
@@ -13,11 +16,8 @@ export default class SymbolTable {
     }
 
     /**
-     * Returns the index for the first match of 'id' in the table
-     * @param id the id to match
-     * @returns the index for the match
+     * Starts a new context
      */
-
     newContext() {
         this.depth++;
     }
@@ -37,6 +37,11 @@ export default class SymbolTable {
         return count;
     }
 
+    /**
+     * Returns the index for the first match of 'id' in the table
+     * @param id the id to match
+     * @returns the index for the match or -1 if not match was found
+     */
     get(id: string) {
         for (let index = this.table.length - 1; index >= 0; index--) {
             if (id === this.table[index].id) {
@@ -49,6 +54,10 @@ export default class SymbolTable {
         return -1;
     }
 
+    /**
+     * Push a new var with the current depth into the table
+     * @param id Name for new var
+     */
     pushVar(id: string) {
         for (let index = this.table.length - 1; index >= 0; index--) {
             if (this.table[index].depth < this.depth) break;
