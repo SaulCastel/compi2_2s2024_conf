@@ -6,6 +6,7 @@ Generar archivos de proyecto:
 
 ```bash
 npm install
+npm run bootstrap
 npm run compile
 npm run build
 ```
@@ -13,5 +14,5 @@ npm run build
 Correr programa:
 
 ```bash
-npm start <ruta_archivo_entrada>
+node dist/index.js <ruta_archivo_entrada>
 ```

@@ -2,10 +2,12 @@
   "name": "conf_own",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node dist/index.js",
     "build": "tsc",
-    "compile": "peggy --format es -o src/grammar.js grammar/grammar.pegjs"
+    "compile": "peggy --format es -o src/grammar.js grammar/grammar.pegjs",
+    "bootstrap": "node tools/Generator.js",
+    "output": "node dist/index.js grammar/input.txt > ~/test.asm"
   },
   "keywords": [],
   "author": "",

@@ -1,1 +1,13 @@
-4 + 3 + (80 - 2) * 3
+var foo = 1;
+{
+	var foo = 2;
+	echo foo;
+	var baz = 3;
+	echo baz;
+	{
+		var baz = 4;
+		echo baz;
+	}
+}
+echo foo;
+
