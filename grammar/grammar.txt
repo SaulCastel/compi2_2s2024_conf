@@ -1,0 +1,22 @@
+Start 		<- Statements*
+
+Statements 	<- Statement* ";"
+		/ "{" Statements* "}"
+
+Statement	<- "echo" Expression
+		/ "var" Identifier "=" Expression
+
+Expression	<- Term (("+" / "-") Term)*
+
+Term		<- Factor (("*" / "/") Factor)*
+
+Factor		<- "(" Expression ")"
+		/ Unary
+		/ Integer
+		/ Identifier
+
+Unary		<- "-" Factor
+
+Integer		<- [0-9]+
+
+Identifier	<- [a-z_][a-z0-9_]*
